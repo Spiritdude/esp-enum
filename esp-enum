@@ -1,0 +1,43 @@
+#!/usr/bin/perl
+
+my $APPNAME = "ESP-Enum";
+my $VERSION = "0.0.1";
+
+$0 =~ s/.+\///;
+
+unless(-e "/dev/esp") {
+   if($> == 0) {
+      mkdir "/dev/esp";
+      `chgrp dialout /dev/esp`;
+      `chmod g+rwx /dev/esp`;
+      print "$0: INFO: /dev/esp created, please re-run script `$0` again as normal user\n";
+      exit 0;
+   } else {
+      print "$0: ERROR: run script as root first (for creating /dev/esp)\n";
+      exit -1;
+   }
+}
+
+unlink <dev/esp/*>;
+
+print "$0: probing all ESP devices (it will reset/reboot each)\n";
+
+foreach(split(/\n/,`nodemcu-tool devices`)) {
+   my($p) = (/(\/dev\/\w+)/);
+   if($p) {
+      $_ = `esptool.py --port $p read_mac`;
+      if(/MAC: (\S+)/) {
+         my $m = $1;
+         symlink($p,"/dev/esp/$m");
+         my($id) = ($m=~/(\w\w\:\w\w\:\w\w)$/);
+         $id =~ s/\://g;
+         $id = "0x$id";
+         symlink($p,"/dev/esp/$id");
+         print "$0:    $p: /dev/esp/$m and /dev/esp/$id\n";
+      }
+   }
+}
+print "$0: done.\n";
+
+exit 0;
+
