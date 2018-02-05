@@ -8,7 +8,7 @@
 # License: MIT License
 #
 # History:
-# 2018/05/02: 0.0.1: first version
+# 2018/02/05: 0.0.1: first version
 
 my $APPNAME = "ESP-Enumerator";
 my $VERSION = "0.0.1";
