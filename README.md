@@ -54,6 +54,7 @@ then you can connect your devices like with NodeMCU firmware:
 ```
 or with Mongoose OS firmware:
 ```
+% mos --port /dev/esp/*98:d0 console
 % mos --port /dev/esp/0x4d98d0 console
 % mos --port /dev/esp/0x4d98d0 put fs/init.js
 ```
@@ -63,3 +64,9 @@ or with Mongoose OS firmware:
 - `esp-enum` resets/reboots each devices as a side-effect of probing the MAC address
 
 Whenever you disconnect or connect an ESP8266 or ESP32, rerun `esp-enum`.
+
+I personally label each device physically with the last 4 digits of the MAC address (e.g. `77:23`), so I can distinct them, 
+so I access them like
+```
+% nodemcu-tool --port /dev/esp/*70:23 terminal
+```
