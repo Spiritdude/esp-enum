@@ -65,7 +65,9 @@ or with Mongoose OS firmware:
 Whenever you disconnect or connect an ESP8266 or ESP32, rerun `esp-enum`.
 
 ## Real World Usage
-![USB Hub with 2x ESP8266 Wemos D1 Mini and 3x ESP32 LOLIN32 Lite]()
+<img src="https://github.com/Spiritdude/esp-enum/raw/master/imgs/usb-hub.jpg" align=right>
+USB Hub with 2x ESP8266 Wemos D1 Mini and 3x ESP32 LOLIN32 Lite
+
 I personally label each device physically with the last 4 digits of the MAC address (e.g. `77:23`), so I can distinct them, 
 so I access them like
 ```
