@@ -47,11 +47,13 @@ esp-enum:    /dev/ttyUSB9: /dev/esp/xx:xx:xx:9f:70:20 and /dev/esp/0x9f7020
 esp-enum: done.
 ```
 
-then you can connect your devices like:
+then you can connect your devices like with NodeMCU firmware:
 ```
 % nodemcu-tool --port /dev/esp/0x9f7082 terminal
 % nodemcu-tool --port /dev/esp/0x9f7082 upload --keeppath shell/main.lua
-%
+```
+or with Mongoose OS firmware:
+```
 % mos --port /dev/esp/0x4d98d0 console
 % mos --port /dev/esp/0x4d98d0 put fs/init.js
 ```
