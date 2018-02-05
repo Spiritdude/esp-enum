@@ -5,6 +5,8 @@
 # Description:
 #  Enumerates multiple ESP8266 and ESP32 according their MAC address and chip id in /dev/esp/*
 #
+# License: MIT License
+#
 # History:
 # 2018/05/02: 0.0.1: first version
 
