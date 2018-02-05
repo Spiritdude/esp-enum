@@ -1,6 +1,14 @@
 #!/usr/bin/perl
 
-my $APPNAME = "ESP-Enum";
+# -- ESP Enumerator, written by Rene K. Mueller <spiritdude@gmail.com>
+#
+# Description:
+#  Enumerates multiple ESP8266 and ESP32 according their MAC address and chip id in /dev/esp/*
+#
+# History:
+# 2018/05/02: 0.0.1: first version
+
+my $APPNAME = "ESP-Enumerator";
 my $VERSION = "0.0.1";
 
 $0 =~ s/.+\///;
