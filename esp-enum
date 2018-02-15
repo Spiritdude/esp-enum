@@ -8,6 +8,7 @@
 # License: MIT License
 #
 # History:
+# 2018/02/15: 0.0.2: unlink fixed
 # 2018/02/05: 0.0.1: first version
 
 my $APPNAME = "ESP-Enumerator";
