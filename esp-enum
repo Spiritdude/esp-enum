@@ -11,7 +11,7 @@
 # 2018/02/05: 0.0.1: first version
 
 my $APPNAME = "ESP-Enumerator";
-my $VERSION = "0.0.1";
+my $VERSION = "0.0.2";
 
 $0 =~ s/.+\///;
 
@@ -28,7 +28,7 @@ unless(-e "/dev/esp") {
    }
 }
 
-unlink <dev/esp/*>;
+unlink </dev/esp/*>;
 
 print "$0: probing all ESP devices (it will reset/reboot each)\n";
 
