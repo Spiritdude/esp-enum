@@ -66,11 +66,11 @@ Whenever you disconnect or connect an ESP8266 or ESP32, rerun `esp-enum`.
 
 ## Real World Usage
 <img src="https://github.com/Spiritdude/esp-enum/raw/master/imgs/usb-hub.jpg" align=right>
-Photo: 8x USB Hub with 2x ESP8266 Wemos D1 Mini and 3x ESP32 LOLIN32 Lite
+Photo: 8x USB Hub with a couple of ESP8266 Wemos D1 Mini and few ESP32 LOLIN32 Lite
 <p><br>
 
-I personally label each device physically with the last 4 digits of the MAC address (e.g. `31:fc`), so I can distinct them, 
+I personally label each device physically with the last 6 digits of the MAC address (e.g. `4f:31:fc`), so I can distinct them, 
 so I access them like
 ```
-% nodemcu-tool --port /dev/esp/*31:fc terminal
+% nodemcu-tool --port /dev/esp/0x4f31fc terminal
 ```
